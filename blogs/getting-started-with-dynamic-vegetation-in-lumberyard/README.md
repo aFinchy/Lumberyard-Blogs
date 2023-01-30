@@ -1,6 +1,6 @@
 # Getting Started with Dynamic Vegetation in Lumberyard: Sample Now Available
 
-<p><img class="aligncenter size-large wp-image-1925" src="/images/DynVeg_BlogHeader_Image-1024x341.jpg" alt="" width="1024" height="341"></p> 
+<p><img class="aligncenter size-large wp-image-1925" src="/getting-started-with-dynamic-vegetation-in-lumberyard/images/DynVeg_BlogHeader_Image-1024x341.jpg" alt="" width="1024" height="341"></p> 
        <p>Amazon Lumberyard 1.19 introduced over 150 new features, bug fixes, and improvements so you can create beautiful, dense worlds, faster. Included with this release is Dynamic Vegetation, our new workflow to help you procedurally generate a diverse and detailed biome faster and more efficiently than manually placing and painting vegetation.</p> 
        <p>The Dynamic Vegetation workflow enables you to define and distribute customized plant vegetation across large areas of game levels with greater consistency and editing ability. Built upon our component entity system, this tool uses a diverse library of component types to help custom design and propagate the type of vegetation biomes required for modern game development.</p> 
        <p>To help you quickly get to grips with this tool, we’ve created a quick start guide, and a <a href="https://d2zdx4pxusljwa.cloudfront.net/DynamicVegetationSample.zip" target="_blank" rel="noopener">Dynamic Vegetation Sample</a> – available for download now.</p> 
