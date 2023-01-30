@@ -217,9 +217,9 @@
        <h2>Let’s Do a Visual Comparison</h2> 
        <p>Below is a visual comparison of the same ‘Layer Spawner’ before and after the modifiers where applied and set up.</p> 
        <p>Before:</p> 
-       <p><img loading="lazy" class="alignnone wp-image-1875 size-full" src="/images/img33.png" alt="" width="658" height="380"></p> 
+       <p><img loading="lazy" class="alignnone wp-image-1875 size-full" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/img33.png" alt="" width="658" height="380"></p> 
        <p>After:</p> 
-       <p><img loading="lazy" class="alignnone wp-image-1874 size-full" src="/images/img34.png" alt="" width="658" height="380"></p> 
+       <p><img loading="lazy" class="alignnone wp-image-1874 size-full" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/img34.png" alt="" width="658" height="380"></p> 
        <h2>Save as Slice</h2> 
        <p>OK we are nearly done, there are just two things left – 1) save our patch as a slice, and 2) extend its placement bounds to fill the world.</p> 
        <ul> 
@@ -350,7 +350,7 @@
           <li>Pin the ‘Gradient Entity Id’ to reference the ‘ImageGradient’ child entity.</li> 
           <li>Instead of boxy placement we can see that the placement has been confined to circular area around the stump.<br> <img loading="lazy" class="alignnone wp-image-1914 size-full" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/img66.png" alt="" width="662" height="475"></li> 
           <li>Go ahead and unhide the ‘BasicCoverage’ grass biome</li> 
-          <li>We can clearly see that this local area around the stump is overriding and placing new vegetation.<br> <img loading="lazy" class="alignnone wp-image-1915 size-full" src="/images/img67.png" alt="" width="662" height="475"></li> 
+          <li>We can clearly see that this local area around the stump is overriding and placing new vegetation.<br> <img loading="lazy" class="alignnone wp-image-1915 size-full" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/img67.png" alt="" width="662" height="475"></li> 
           <li>(We also turned off the debug rendering of the Boxes and other Shapes.)</li> 
           <li>There is one more step we’d like to cover…</li> 
           <li>One additional tweak we can make is to create a ‘Blocker’ area at the base, this will keep both the foreground and background layers from placing vegetation.</li> 
