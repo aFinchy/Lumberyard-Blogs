@@ -76,7 +76,7 @@
          <ul> 
           <li>Make sure it’s positioned to the center of the terrain</li> 
           <li>That would be setting the Entity’s Translate to: <pre>x 64.0 m, y 64.0 m, z 32.0 m</pre> </li> 
-         </ul> <p>Entity Outliner:<br> <img loading="lazy" class="alignnone wp-image-1832 size-full" src="/images/img03.png" alt="" width="455" height="122"><br> Entity Inspector:<br> <img loading="lazy" class="alignnone wp-image-1833 size-full" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/img04.png" alt="" width="517" height="468"></p></li> 
+         </ul> <p>Entity Outliner:<br> <img loading="lazy" class="alignnone wp-image-1832 size-full" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/img03.png" alt="" width="455" height="122"><br> Entity Inspector:<br> <img loading="lazy" class="alignnone wp-image-1833 size-full" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/img04.png" alt="" width="517" height="468"></p></li> 
         <li>In the ‘Entity Inspector’ panel use the ‘Add Component’ palette to add a ‘Vegetation Layer Spawner’ Component 
          <ul> 
           <li>This is the core component that initializes the ‘planting engine’ to spawn vegetation.</li> 
