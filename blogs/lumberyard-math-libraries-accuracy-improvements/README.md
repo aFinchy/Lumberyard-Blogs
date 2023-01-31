@@ -16,7 +16,7 @@
        <p><code>const __m128 estimate <strong>=</strong> SqrtInvEstimate<strong>(</strong>value<strong>);</strong></code><br> <code>const __m128 estSqValue <strong>=</strong> Mul<strong>(</strong>value<strong>,</strong> Mul<strong>(</strong>estimate<strong>,</strong> estimate<strong>));</strong></code><br> <code><strong>return</strong> Mul<strong>(</strong>Mul<strong>(</strong>Half<strong>,</strong> estimate<strong>),</strong> Sub<strong>(</strong>Three<strong>,</strong> estSqValue<strong>));</strong></code></p> 
        <p>The new version is drastically more accurate, with very little impact on performance. For example, see the table below for a comparison of 1000 calls to <code>Vector3::GetNormalized</code> in the two versions.</p> 
        <p>&nbsp;</p> 
-       <p><img loading="lazy" class="aligncenter wp-image-3339 size-full" src="/images/accuracy-improvements-chart-1.png" alt="" width="800" height="223"></p> 
+       <p><img loading="lazy" class="aligncenter wp-image-3339 size-full" src="/blogs/lumberyard-math-libraries-accuracy-improvements/images/accuracy-improvements-chart-1.png" alt="" width="800" height="223"></p> 
        <h2></h2> 
        <h2>Trigonometric Functions</h2> 
        <p>Another area where we had disappointing accuracy was trigonometric functions such as sine, cosine, tangent and their inverses. These are vital for geometry operations which are ubiquitous in a games engine, but are also fundamental functions which show up in a diverse array of other less obvious applications, such as efficient sampling of normal distributions in random number generation (RNG).</p> 
