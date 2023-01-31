@@ -1,19 +1,19 @@
 # Working with Lumberyard’s Script Canvas: Project N.E.M.O Sample Now Available
 
-<p><img class="aligncenter size-large wp-image-1778" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/BlogHeader1200x400_Final-1024x341.jpg" alt="" width="1024" height="341"></p> 
+<p><img class="aligncenter size-large wp-image-1778" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/BlogHeader1200x400_Final-1024x341.jpg" alt="" width="1024" height="341"></p> 
        <p>Today, we’re excited to introduce a ready-to-use Amazon Lumberyard sample called Project N.E.M.O to help you get started with <a href="https://docs.aws.amazon.com/lumberyard/latest/userguide/script-canvas-intro.html" target="_blank" rel="noopener">Lumberyard Script Canvas</a>&nbsp;, our visual scripting tool.</p> 
        <p>We first gave you a sneak peek of Project N.E.M.O at GDC 2019. And following the release of <a href="https://aws.amazon.com/lumberyard/downloads/" target="_blank" rel="noopener">Lumberyard 1.19</a>, we’re happy to give you the full download so you can quickly get to grips with some of the features and workflows used to script common game play functions.</p> 
        <p><a href="https://d2zdx4pxusljwa.cloudfront.net/NEMO.zip">Project N.E.M.O (Nautical Emergency Maneuvers and Operations)</a> is a complete game level sample that showcases some of the latest capabilities of Script Canvas. It’s a short obstacle navigation experience using a 3rd person camera to control a mini sub through an underwater mine field along with pickups to collect along the way.</p> 
        <p>&nbsp;</p> 
-       <p><a href="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo-ly2.gif"><img loading="lazy" class="aligncenter wp-image-1810 size-full" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo-ly2.gif" alt="Project N.E.M.O." width="1280" height="720"></a></p> 
+       <p><a href="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo-ly2.gif"><img loading="lazy" class="aligncenter wp-image-1810 size-full" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo-ly2.gif" alt="Project N.E.M.O." width="1280" height="720"></a></p> 
        <p>When we first approached the challenge of building a new scripting system in Lumberyard, we wanted to build something that would benefit developers of all sizes – regardless of skill or expertise. Something that users with limited scripting skills could easily master, and at the same time provide a highly powerful tool for veteran game developers. On a technical level, it was also important that graphs stay small and focused on the immediate tasks, while providing the ability to talk across other scripts as needed.</p> 
        <p>Using these goals, we’ve created a scripting solution that offers two key elements. First, scripts are self-contained. Which means they allow clear direction to understand what functions are called. Second, they are easy to re-use or replace. Script files are their own file format and accessed by other entities or other events. Should it be required, this is a simple swap within an entities component properties. Node based scripting can get large and unwieldly when you need to address every form of functionality. Our approach allows for event driven scripts, letting you produce small scripts that don’t require complex logic to maintain states.</p> 
        <p>Below we’ve outlined the different game functions we created for N.E.M.O. It covers submarine functionality, mines and squid behavior, HUD display, pickups, world space UI, game ending and script events.</p> 
        <h2>Submarine Slice</h2> 
        <p>The submarine slice is the most complex element of this sample as it consists of all the visual, behavior, and player control elements.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1780" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo1.png" alt="" width="731" height="512"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1780" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo1.png" alt="" width="731" height="512"></p> 
        <p>The entity hierarchy for the Submarine is as follows:</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1781" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo2.png" alt="" width="308" height="350"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1781" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo2.png" alt="" width="308" height="350"></p> 
        <p>Entities are grouped within parent entities to keep the submarine’s hierarchy organized and tidy. The different behaviors and effects that make up the submarine slice are grouped accordingly. Here’s a description of each:</p> 
        <ul> 
         <li><strong>Meshes</strong> – This holds purely visual entities, they do not have any behavior, physics, or special effects.</li> 
@@ -29,20 +29,20 @@
        </ul> 
        <h2>Mine Slice</h2> 
        <p>Mines are explosive objects that spawn randomly from a <strong>Random Timed Spawner</strong> that spans the length of the playable space. They are physical objects that rely on gravity and buoyancy in order to give a realistic “falling through water” effect, as well as create hazards for the player to destroy or navigate around.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1782" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo3.png" alt="" width="731" height="849"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1782" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo3.png" alt="" width="731" height="849"></p> 
        <p>The Script Canvas graph for mines is responsible for detecting a collision and spawning an explosion when it happens.</p> 
        <p>When a mine explodes it also needs to deactivate itself in order to release the entity.</p> 
        <p>If the mine is destroyed by a player’s projectile&nbsp; it spawns the a world space UI and sends the DisplayWorldScore Script Event in order to update the value of the score to display and update the player’s score on the HUD.</p> 
        <h2>Squid Slice</h2> 
        <p>The squid consists of two parts. The bottom part (the tentacles) are a separate entity from the top part. This allows the rotation of the tentacles separately from the body.</p> 
        <p>The body of the squid has a spawner component from which it randomly spawns projectiles.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1783" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/Nemo4.png" alt="" width="731" height="758"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1783" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/Nemo4.png" alt="" width="731" height="758"></p> 
        <p>Squids move vertically throughout their lifetime, if destroyed by the player they will spawn an explosion and deactivate themselves, otherwise they will continue moving vertically until their lifetime expires at which point they’ll deactivate themselves.</p> 
        <h2>HUD (Heads Up Display)</h2> 
        <p>The HUD in this demo consists of four elements; the game logo on the top left corner that fades out over time when the game starts, the score on the top right, ammo count on the bottom left, and the health on the bottom right.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1784" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo5.png" alt="" width="731" height="556"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1784" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo5.png" alt="" width="731" height="556"></p> 
        <p>In addition to the HUD there is also a damage feedback screen that is faded into view briefly when the player takes damage from mines or squid projectiles.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1785" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo6.png" alt="" width="731" height="700"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1785" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo6.png" alt="" width="731" height="700"></p> 
        <h2>HUD UI Canvases</h2> 
        <ul> 
         <li><strong>Logo.uicanvas</strong> Displays the game’s logo on the top right when the game starts and fades away.</li> 
@@ -52,8 +52,8 @@
        </ul> 
        <h2>Pickups</h2> 
        <p>Pickups allow the player to collect a score. It works by using a trigger area as the mechanism to detect if a player has collided with it. The “On Area Entered” event from the trigger component handles the Script Canvas graph. It’s used to notify the game that a pickup occurred, and to spawn a world space UI entity that displays the score the player will receive for collecting this pickup.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1786" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo7.png" alt="" width="731" height="941"></p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1787" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo8.png" alt="" width="731" height="766"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1786" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo7.png" alt="" width="731" height="941"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1787" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo8.png" alt="" width="731" height="766"></p> 
        <h2>World Space UI</h2> 
        <p>When the player collects coins or destroys squids an entity that displays the score is spawned briefly.</p> 
        <p>This uses render to texture in order to render UI in world space, the entity consists of the following components:</p> 
@@ -64,12 +64,12 @@
         <li><strong>UI Canvas on Mesh</strong> – Allows us to specify a Render target override in order to use the render to target feature, we set this to $worldscore to match the Diffuse texture map of the material.</li> 
         <li><strong>UI Canvas Asset Ref</strong> – The UI Canvas for the score display.</li> 
        </ul> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1788" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo9.png" alt="" width="849" height="679"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1788" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo9.png" alt="" width="849" height="679"></p> 
        <h2>Game End</h2> 
        <p>Game end is determined in two ways, the first is if the player’s health reaches 0, in this case we display a mission failed screen.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1789" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo10.png" alt="" width="731" height="499"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1789" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo10.png" alt="" width="731" height="499"></p> 
        <p>The player crossing an “end of game” trigger determines mission success.</p> 
-       <p><img loading="lazy" class="aligncenter size-full wp-image-1790" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo11.png" alt="" width="731" height="527"><img loading="lazy" class="aligncenter size-full wp-image-1791" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/nemo12.png" alt="" width="731" height="558"></p> 
+       <p><img loading="lazy" class="aligncenter size-full wp-image-1790" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo11.png" alt="" width="731" height="527"><img loading="lazy" class="aligncenter size-full wp-image-1791" src="/blogs/working-with-lumberyards-script-canvas-project-n-e-m-o-sample-now-available/images/nemo12.png" alt="" width="731" height="558"></p> 
        <h2>Script Events</h2> 
        <p>Script Events communicate information &amp; data across entities and Script Canvas graphs. They allow us to create an event sent directly, or as a general broadcast and received then handled by. Below are descriptions of each:</p> 
        <h3>Game Events (Broadcast)</h3> 
