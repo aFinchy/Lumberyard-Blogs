@@ -188,5 +188,4 @@ inline AzNetworking::UdpPacketEncodingBuffer&amp; InitiateConnectionPacket::Modi
        <p>This is roughly a 30% improvement over the performance in GridMate!</p> 
        <p>(As a side note, with all features on profiling shows ~55 microseconds on average spent in <code>AzNetworking</code>’s Send/Receive logic.)</p> 
        <p>To this day, we’ve seen GridMate used to power a lot of impressive simulations and we wouldn’t be here without the lessons learned from it. We’re hoping the improvements demonstrated so far in <code>AzNetworking</code> can not only take the types of network simulations we’ve seen so far a step further but also power what comes next.</p> 
-       <p>We’re hard at work developing the next version of our tech&nbsp;and we’d love to hear from you. Share your ideas and thoughts in the comments below, or on <a href="https://forums.awsgametech.com/" target="_blank" rel="noopener noreferrer">the Lumberyard forums</a>.</p> 
        
