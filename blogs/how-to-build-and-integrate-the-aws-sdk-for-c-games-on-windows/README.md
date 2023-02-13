@@ -1,6 +1,6 @@
 # How to build and integrate the AWS SDK for C++ games on Windows
 
-<p>Following on from our first post ‘<a href="https://aws.amazon.com/blogs/gametech/game-developers-guide-to-the-aws-sdk" target="_blank" rel="noopener noreferrer">Game developer’s guide to setting up the AWS SDK</a>’, we’re now going to show you how to integrate the SDK for C++, the language used in major game engines like Unreal and Lumberyard.</p> 
+<p>Following on from our first post ‘Game developer’s guide to setting up the AWS SDK’, we’re now going to show you how to integrate the SDK for C++, the language used in major game engines like Unreal and Lumberyard.</p> 
        <p>To help you get up and running even faster, we’ve created a sample code package that is available for you to <a href="https://github.com/aws-samples/aws-sdk-getting-started-message-of-the-day" target="_blank" rel="noopener noreferrer">download from GitHub</a>.</p> 
        <h2>Setting up the client</h2> 
        <p>Using the sample code above, you’re now ready to run the code demo client. However, it doesn’t show you how to add the AWS C++ SDK in to your own game, so we’ll explain that here.</p> 
@@ -99,9 +99,3 @@ Aws::ShutdownAPI(options);
        <p>Once the method is called, it returns an “outcome” which is specific to the method we invoked, in this case, <code>InvokeOutcome()</code> (but you can use auto to make your life easier by not having to remember all this.)</p> 
        <p>The outcome tells you if the call was successful or not, containing error information if not. If it’s successful you can then grab a “response” from the outcome, which is also specific to the method called <code>InvokeRequest()</code>. The outcome, much like the request, will contain accessors and methods to make it easy to figure out what the method returned.</p> 
        <p>It’s worth noting, AWS stands for “Amazon Web Services” which is why JSON is so prevalent here. The AWS SDK for C++ is pretty much a wrapper around a bunch of HTTP service calls. Fortunately, the SDK for C++ has a JSON library built in so you don’t need to find one.</p> 
-       <h2>That’s it!</h2> 
-       <p>For extra help setting up Amazon Cognito, read this post on ‘How to Set Up Player Authentication with Amazon Cognito’.</p> 
-       <p>If you need more information on using the AWS C++ SDK <a href="https://docs.aws.amazon.com/sdk-for-cpp/index.html#lang/en_us" target="_blank" rel="noopener noreferrer">read the documentation</a>.</p> 
-       <p>As always, we want to hear from you. If you have any questions or feedback on our learning resources, head over to the <a href="https://gamedev.amazon.com/forums/index.html" target="_blank" rel="noopener noreferrer">Amazon GameDev forums.</a></p> 
-       <p><a href="http://aws.amazon.com/gametech/events/digital-download-online" target="_blank" rel="noopener noreferrer"><img class="alignnone size-large wp-image-2398" src="https://d2908q01vomqb2.cloudfront.net/91032ad7bbcb6cf72875e8e8207dcfba80173f7c/2020/05/12/digital-download-banner-1024x93.png" alt="" width="1024" height="93"></a></p> 
-       
