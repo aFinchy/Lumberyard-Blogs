@@ -1,3 +1,13 @@
+------------
+
+**Amazon Lumberyard is no longer offered. We recommend Open 3D Engine, Lumberyard’s Apache-licensed successor. O3DE is maintained by the open-source community, including developers from Adobe, AWS, Epic, Microsoft, Intel, Lightspeed Studios, Niantic, and others. Visit O3DE's [website](https://www.o3de.org/ "website"), [Discord](https://discord.gg/o3de), and [Github](https://github.com/o3de/o3de).**
+
+------------
+
+## Amazon Lumberyard Blog Archive
+
+Welcome to the Amazon Blog Archive. This repository holds various technical blogs that are kept as a archive for exisiting customers of the engine. 
+
 ## Table of Contents
 
 [Anti-Ghosting with Temporal Anti-Aliasing](/blogs/anti-ghosting-with-temporal-anti-aliasing)<br>
