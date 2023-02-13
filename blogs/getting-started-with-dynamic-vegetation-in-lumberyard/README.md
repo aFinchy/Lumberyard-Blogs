@@ -3,8 +3,7 @@
 <p><img class="aligncenter size-large wp-image-1925" src="/blogs/getting-started-with-dynamic-vegetation-in-lumberyard/images/DynVeg_BlogHeader_Image-1024x341.jpg" alt="" width="1024" height="341"></p> 
        <p>Amazon Lumberyard 1.19 introduced over 150 new features, bug fixes, and improvements so you can create beautiful, dense worlds, faster. Included with this release is Dynamic Vegetation, our new workflow to help you procedurally generate a diverse and detailed biome faster and more efficiently than manually placing and painting vegetation.</p> 
        <p>The Dynamic Vegetation workflow enables you to define and distribute customized plant vegetation across large areas of game levels with greater consistency and editing ability. Built upon our component entity system, this tool uses a diverse library of component types to help custom design and propagate the type of vegetation biomes required for modern game development.</p> 
-       <p>To help you quickly get to grips with this tool, we’ve created a quick start guide, and a <a href="https://d2zdx4pxusljwa.cloudfront.net/DynamicVegetationSample.zip" target="_blank" rel="noopener">Dynamic Vegetation Sample</a> – available for download now.</p> 
-       <p>But first, let’s explain a little more about Lumberyard Dynamic Vegetation.</p> 
+       <p>To help you quickly get to grips with this tool, we’ve created a quick start guide.
        <h2>About Dynamic Vegetation</h2> 
        <p>Lumberyard customers told us that it’s difficult and time-consuming to create high-fidelity content in large-scale game environments. As game world sizes have increased exponentially, manual workflows like painting or placing individual plant instances doesn’t scale well with production needs. When we approached the challenge of building a new vegetation system, we worked directly with our customers to identify essential requirements including:</p> 
        <ul> 
@@ -14,7 +13,7 @@
         <li>WYSIWYG live editing and rapid iteration</li> 
         <li>Environment content that can be altered dynamically</li> 
        </ul> 
-       <p>We built the new workflow for vegetation upon the <a href="https://docs.aws.amazon.com/lumberyard/latest/userguide/component-intro.html" target="_blank" rel="noopener">Lumberyard component entity system</a>. This adds flexibility and unlocks easier world building options. The Dynamic Vegetation workflow allows you to author both smaller areas of vegetation like a garden, to large biomes distributed across vast areas of a game level. The diverse vegetation component library provides you with the mechanisms needed to author visually complex vegetation biomes for modern high-fidelity games.</p> 
+       <p>We built the new workflow for vegetation upon the <a href="https://github.com/awsdocs/amazon-lumberyard-user-guide/blob/master/doc_source/component-intro.md" target="_blank" rel="noopener">Lumberyard component entity system</a>. This adds flexibility and unlocks easier world building options. The Dynamic Vegetation workflow allows you to author both smaller areas of vegetation like a garden, to large biomes distributed across vast areas of a game level. The diverse vegetation component library provides you with the mechanisms needed to author visually complex vegetation biomes for modern high-fidelity games.</p> 
        <p>Once biomes are established, you can define vegetation coverage of the entire level, or specified regions on the terrain, mesh entities, roads, rivers, water volumes, and even arbitrary shapes. Once placement areas are defined, simple modifications to the components and parameters for each biome entity allows for real-time updates and edits. The workflow supports multiple biome layers with rule sets that can mask, blend, or exclude other dynamic vegetation biome entities in the level.</p> 
        <p>The resulting visual consistency and easy modification allows for a more reliable course of production from concept to final product. Because every biome is defined using the entity component and slice system, settings are saved exactly as designed and can be used in other levels, or distributed as desired across different areas of a large world. Edits and changes to any vegetation slice are then updated across all instances and maintain consistent visual direction.</p> 
        <h2>Getting Started</h2> 
@@ -22,10 +21,10 @@
        <p>There are two primary types of areas:</p> 
        <p><strong>Background layer</strong> <em>Coverage</em> intended to cover large&nbsp;swaths or the entire level with default ground cover.</p> 
        <p><strong>Foreground layer</strong>&nbsp;<em>Clusters</em> intended for smaller local areas, which replace the ground cover they are placed over.</p> 
-       <p>This quick start guide will cover the basics of dynamic vegetation. To familiarize you&nbsp;with the basic components and workflow, we will walk you through creating a simple version of each primary layer. Once you’re through the basics, we encourage you to try out some of the other components and if you have questions reach out to us on our <a href="https://gamedev.amazon.com/forums/index.html" target="_blank" rel="noopener">forums.</a></p> 
-       <p>Note: This quick start guide assumes at least some basic familiarity with the Lumberyard Editor. If a term or a tool is unfamiliar you may want to go through the tutorials and samples in the Lumberyard general <a href="https://docs.aws.amazon.com/lumberyard/latest/gettingstartedguide/intro.html" target="_blank" rel="noopener">‘Getting Started’</a> and <a href="https://docs.aws.amazon.com/lumberyard/latest/userguide/lumberyard-intro.html" target="_blank" rel="noopener">‘User Guide’.</a></p> 
+       <p>This quick start guide will cover the basics of dynamic vegetation. To familiarize you&nbsp;with the basic components and workflow, we will walk you through creating a simple version of each primary layer. Once you’re through the basics, we encourage you to try out some of the other components.</p> 
+       <p>Note: This quick start guide assumes at least some basic familiarity with the Lumberyard Editor. If a term or a tool is unfamiliar you may want to go through the tutorials and samples in the Lumberyard general <a href="https://github.com/awsdocs/amazon-lumberyard-getting-started-guide/blob/master/doc_source/intro.md" target="_blank" rel="noopener">‘Getting Started’</a> and <a href="https://github.com/awsdocs/amazon-lumberyard-user-guide/blob/master/doc_source/lumberyard-intro.md" target="_blank" rel="noopener">‘User Guide’.</a></p> 
        <h2>Setup</h2> 
-       <p>We have provided examples of the tasks outlined in this document, you may use them as reference and to follow along or compare your results.&nbsp; Those examples are provided in the <a href="https://d2zdx4pxusljwa.cloudfront.net/DynamicVegetationSample.zip" target="_blank" rel="noopener">‘DyanmicVegetationSample’</a> project. Before we get started make sure that the project is activated:</p> 
+       <p>We have provided examples of the tasks outlined in this document, you may use them as reference and to follow along or compare your results.&nbsp; Those examples are provided in the DyanmicVegetationSample project. Before we get started make sure that the project is activated:</p> 
        <ol> 
         <li>Unzip the ‘DynamicVegetationSample.zip’ file</li> 
         <li>Move the project folder ‘DynamicVegetationSample’ into your Lumberyard 1.19 location:[drive]:\Amazon\Lumberyard1.19\dev\DynamicVegetationSample</li> 
@@ -33,7 +32,7 @@
         <li>Click to select the ‘DynamicVegetationSample’ project</li> 
         <li>Then in the upper-right, click on the button labeled ‘Set as Default’</li> 
         <li>Close the ‘Project Configurator’</li> 
-        <li>The project will need to be built before you can run it. Click here for instructions on <a href="https://docs.aws.amazon.com/lumberyard/latest/userguide/building-your-lumberyard-game-project.html" target="_blank" rel="noopener">building your game project.</a></li> 
+        <li>The project will need to be built before you can run it.</li> 
        </ol> 
        <h2>New Level</h2> 
        <h3>Steps:</h3> 
